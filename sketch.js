@@ -13,7 +13,7 @@ function setup() {
 }
 
 function draw() {
-  background(200);
+  background(255);
     
   repeller.setPower(mouseX);
   repeller.move(0.5);
