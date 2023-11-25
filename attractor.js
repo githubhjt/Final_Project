@@ -1,6 +1,6 @@
 class Attractor {
   constructor(x, y) {
-    this.position = createVector(x, y);
+    this.position = createVector(width/2, height/2);
     //{!1} How strong is the repeller?
     this.power = 150;
   }
@@ -17,7 +17,7 @@ class Attractor {
     stroke(0);
     strokeWeight(2);
     fill(200, 130, 50);
-    circle(this.position.x, this.position.y, 32);
+    circle(width/2, height/2, 32);
   }
 
   pull(particle) {
