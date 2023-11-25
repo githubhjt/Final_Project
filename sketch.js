@@ -29,7 +29,7 @@ function draw() {
   let gravity = createVector(0, 0.1);
   emitter.applyForce(gravity);
   //{!1} Applying the repeller
-  emitter.applyRepeller(repeller);
+  // emitter.applyRepeller(repeller);
   emitter.applyAttractor(att);
   emitter.run();
 
