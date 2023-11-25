@@ -15,8 +15,8 @@ function setup() {
 function draw() {
   background(230);
     
-  repeller.setPower(mouseX);
-  repeller.move(0.5);
+  // repeller.setPower(mouseX);
+  // repeller.move(0.5);
   
   emitter.addParticle();
   emitter.addParticle();
@@ -33,6 +33,6 @@ function draw() {
   emitter.applyAttractor(att);
   emitter.run();
 
-  repeller.show();
+  // repeller.show();
   att.show();
 }
