@@ -21,6 +21,9 @@ function draw() {
   emitter.addParticle();
   emitter.addParticle();
   emitter.addParticle();
+  emitter.addParticle();
+  emitter.addParticle();
+  emitter.addParticle();
   
   // We’re applying a universal gravity.
   let gravity = createVector(0, 0.1);
