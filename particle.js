@@ -27,7 +27,7 @@ class Particle {
   update() {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
-    this.lifespan -= 2;
+    this.lifespan -= 1;
     this.acceleration.mult(0);
   }
 
