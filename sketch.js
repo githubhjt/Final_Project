@@ -3,15 +3,15 @@ let emitter;
 
 //{!1} One repeller
 let repeller;
-let att1;
-let att2
+let att1, att2, att3;
 
 function setup() {
   createCanvas(400, 400);
   emitter = new Emitter(width / 2, height/2);
   repeller = new Repeller(width / 2, 350);
-  att1 = new Attractor1(150, 150);
-  att2 = new Attractor2(90, 230);
+  att1 = new Attractor1(200, 100);
+  att2 = new Attractor2(100, 200);
+  att3 = new Attractor3(300, 200);
 }
 
 function draw() {
@@ -23,9 +23,6 @@ function draw() {
   emitter.addParticle();
   emitter.addParticle();
   emitter.addParticle();
-  emitter.addParticle();
-  emitter.addParticle();
-  emitter.addParticle();
   
   // We’re applying a universal gravity.
   let gravity = createVector(0, 0.1);
@@ -34,9 +31,11 @@ function draw() {
   // emitter.applyRepeller(repeller);
   emitter.applyAttractor1(att1);
   emitter.applyAttractor2(att2);
+  emitter.applyAttractor3(att3);
   emitter.run();
 
   // repeller.show();
   att1.show();
   att2.show();
+  att3.show();
 }

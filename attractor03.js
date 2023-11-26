@@ -1,4 +1,4 @@
-class Attractor1 {
+class Attractor3 {
   constructor(x, y) {
     this.position = createVector(x, y);
     //{!1} How strong is the repeller?
