@@ -3,7 +3,7 @@ let emitter;
 
 //{!1} One repeller
 let repeller;
-let att1, att2, att3;
+let att1, att2, att3, att4;
 
 function setup() {
   createCanvas(400, 400);
@@ -12,6 +12,7 @@ function setup() {
   att1 = new Attractor1(200, 100);
   att2 = new Attractor2(100, 200);
   att3 = new Attractor3(300, 200);
+  att4 = new Attractor3(200, 300);
 }
 
 function draw() {
@@ -32,10 +33,12 @@ function draw() {
   emitter.applyAttractor1(att1);
   emitter.applyAttractor2(att2);
   emitter.applyAttractor3(att3);
+  emitter.applyAttractor3(att4);
   emitter.run();
 
   // repeller.show();
   att1.show();
   att2.show();
   att3.show();
+  att4.show();
 }
