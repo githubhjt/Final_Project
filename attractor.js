@@ -1,30 +1,30 @@
 class Attractor {
   constructor(x, y) {
-    this.position = createVector(width/2, height/2);
+    this.position = createVector(x, y);
     //{!1} How strong is the repeller?
-    this.power = 1000;
+    this.power = 500;
   }
   
   move(value) {
     this.position.y -= value;
   }
   
-  setPower(value) {
-    this.power = map(value, 0, width, -300, 300);
-  }
+  // setPower(value) {
+  //   this.power = map(value, 0, width, -300, 300);
+  // }
 
   show() {
     stroke(0);
     strokeWeight(2);
     fill(80, 120, 150);
-    circle(width/2, height/2, 25);
+    circle(this.position.x, this.position.y, 25);
   }
 
   pull(particle) {
     //{!6 .code-wide} This is the same repel algorithm we used in Chapter 2: forces based on gravitational attraction.
-    let force = p5.Vector.sub(this.position, this.position);
+    let force = p5.Vector.sub(this.position, particle.position);
     let distance = force.mag();
-    distance = constrain(distance, 10, 15);
+    distance = constrain(distance, 30, 50);
     let strength = this.power / (distance * distance);
     force.setMag(strength);
     return force;

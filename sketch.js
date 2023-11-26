@@ -9,7 +9,7 @@ function setup() {
   createCanvas(400, 400);
   emitter = new Emitter(width / 2, height/2);
   repeller = new Repeller(width / 2, 350);
-  att = new Attractor(20, height/2);
+  att = new Attractor(150, 150);
 }
 
 function draw() {
