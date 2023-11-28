@@ -3,6 +3,7 @@ let emitter;
 
 // GUI
 let repSlider;
+let emitSlider;
 
 //{!1} One repeller
 let repeller;
@@ -15,9 +16,15 @@ function setup() {
 
   repSlider = createSlider(0, 1000, 500);
   repSlider.position(415, 15);
+  let p = createP('Repeller Power');
+  p.style('font-size', '15px');
+  p.position(560, 0);
 
-  emiSlider = createSlider(0, 500, 10);
-  emiSlider.position(415, 35)
+  emitSlider = createSlider(0, 10, 5);
+  emitSlider.position(415, 40);
+  let s = createP('Emitter Amount');
+  s.style('font-size', '15px');
+  s.position(560, 25);
 
   emitter = new Emitter(width / 2, height / 2);
   repeller = new Repeller(width / 2, 350);
@@ -33,9 +40,9 @@ function draw() {
   repeller.setPower(repSlider.value());
   repeller.move(0.5);
   
-  // for (let i=0; i<)
-  emitter.addParticle();
-  emitter.addParticle();
+  for (let i=0; i < emitSlider.value(); i++) {
+    emitter.addParticle();
+  }
   
   // We’re applying a universal gravity.
   let gravity = createVector(0, 0.1);
@@ -53,4 +60,6 @@ function draw() {
   att2.show();
   att3.show();
   att4.show();
+
+
 }
