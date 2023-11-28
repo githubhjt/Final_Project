@@ -16,7 +16,7 @@ function setup() {
   repSlider = createSlider(0, 1000, 500);
   repSlider.position(415, 15);
 
-  emiSlider = createSlider(0, 500, 5);
+  emiSlider = createSlider(0, 500, 10);
   emiSlider.position(415, 35)
 
   emitter = new Emitter(width / 2, height / 2);
@@ -24,7 +24,7 @@ function setup() {
   att1 = new Attractor1(200, 100);
   att2 = new Attractor2(100, 200);
   att3 = new Attractor3(300, 200);
-  att4 = new Attractor3(200, 300);
+  att4 = new Attractor4(200, 300);
 }
 
 function draw() {
@@ -33,6 +33,7 @@ function draw() {
   repeller.setPower(repSlider.value());
   repeller.move(0.5);
   
+  // for (let i=0; i<)
   emitter.addParticle();
   emitter.addParticle();
   
