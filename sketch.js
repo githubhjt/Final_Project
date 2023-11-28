@@ -9,12 +9,15 @@ let repeller;
 let att1, att2, att3, att4;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(400, 600);
   textSize(15);
   noStroke();
 
   repSlider = createSlider(0, 1000, 500);
   repSlider.position(415, 15);
+
+  emiSlider = createSlider(0, 500, 5);
+  emiSlider.position(415, 35)
 
   emitter = new Emitter(width / 2, height / 2);
   repeller = new Repeller(width / 2, 350);
