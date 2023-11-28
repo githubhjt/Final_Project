@@ -1,12 +1,21 @@
 // One ParticleSystem
 let emitter;
 
+// GUI
+let repSlider;
+
 //{!1} One repeller
 let repeller;
 let att1, att2, att3, att4;
 
 function setup() {
   createCanvas(400, 400);
+  textSize(15);
+  noStroke();
+
+  repSlider = createSlider(0, 1000, 500);
+  repSlider.position(415, 15);
+
   emitter = new Emitter(width / 2, height / 2);
   repeller = new Repeller(width / 2, 350);
   att1 = new Attractor1(200, 100);

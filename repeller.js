@@ -10,7 +10,7 @@ class Repeller {
   }
   
   setPower(value) {
-    this.power = map(value, 0, width, -300, 300);
+    this.power = value;
   }
 
   show() {
