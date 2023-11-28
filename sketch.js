@@ -45,7 +45,7 @@ function draw() {
   emitter.applyAttractor1(att1);
   emitter.applyAttractor2(att2);
   emitter.applyAttractor3(att3);
-  emitter.applyAttractor3(att4);
+  emitter.applyAttractor4(att4);
   emitter.run();
 
   repeller.show();
