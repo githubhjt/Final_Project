@@ -1,21 +1,17 @@
 // GUI
-let repSlider, emitSlider;
-
-let tValue = 10;
-let tValueMin = 0;
-let tValueMax = 100;
-let tValueStep = 2;
-let gui;
-
 let params = {
-  testValue : 10,
-  testValueMin : 0,
-  testValueMax : 500,
-  testValueStep : 2,
-  move : 1,
-  moveMin : 0,
-  moveMax : 10,
-  moveStep : 0.1,
+  repellerPower : 10,
+  repellerPowerMin : 0,
+  repellerPowerMax : 500,
+  repellerPowerStep : 2,
+  repellerMove : 0.3,
+  repellerMoveMin : 0,
+  repellerMoveMax : 10,
+  repellerMoveStep : 0.1,
+  emitterAmount : 3,
+  emitterAmountMin : 0,
+  emitterAmountMax : 10,
+  emitterAmountStep : 1,
   tColor : [200, 0, 0],
   tChoice : ['apple', 'banana', 'mango']
 }
@@ -29,20 +25,6 @@ let att1, att2, att3, att4;
 
 function setup() {
   createCanvas(400, 600);
-  textSize(15);
-  noStroke();
-
-  repSlider = createSlider(0, 1000, 500);
-  repSlider.position(415, 15);
-  let p = createP('Repeller Power');
-  p.style('font-size', '15px');
-  p.position(560, 0);
-
-  emitSlider = createSlider(0, 10, 5);
-  emitSlider.position(415, 40);
-  let s = createP('Emitter Amount');
-  s.style('font-size', '15px');
-  s.position(560, 25);
 
   emitter = new Emitter(width / 2, height / 2);
   repeller = new Repeller(width / 2, 350);
@@ -56,16 +38,16 @@ function setup() {
   // gui.addGlobals('tValue');
   
   gui.addObject(params);
-  gui.setPosition(410, 80);
+  gui.setPosition(410, 10);
 }
 
 function draw() {
   background(230);
     
-  repeller.setPower(params.testValue);
-  repeller.move(params.move);
+  repeller.setPower(params.repellerPower);
+  repeller.move(params.repellerMove);
   
-  for (let i=0; i < emitSlider.value(); i++) {
+  for (let i=0; i < params.emitterAmount; i++) {
     emitter.addParticle();
   }
   
