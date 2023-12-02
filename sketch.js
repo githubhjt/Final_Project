@@ -1,13 +1,29 @@
 // GUI
 let params = {
-  repellerPower : 10,
+  repellerPower : 500,
   repellerPowerMin : 0,
-  repellerPowerMax : 500,
+  repellerPowerMax : 1000,
   repellerPowerStep : 2,
   repellerMove : 0.3,
   repellerMoveMin : 0,
   repellerMoveMax : 10,
   repellerMoveStep : 0.1,
+  att1Power : 500,
+  att1PowerMin : 0,
+  att1PowerMax : 1000,
+  att1PowerStep : 2,
+  att2Power : 500,
+  att2PowerMin : 0,
+  att2PowerMax : 1000,
+  att2PowerStep : 2,
+  att3Power : 500,
+  att3PowerMin : 0,
+  att3PowerMax : 1000,
+  att3PowerStep : 2,
+  att4Power : 500,
+  att4PowerMin : 0,
+  att4PowerMax : 1000,
+  att4PowerStep : 2,
   emitterAmount : 3,
   emitterAmountMin : 0,
   emitterAmountMax : 10,
@@ -46,6 +62,10 @@ function draw() {
     
   repeller.setPower(params.repellerPower);
   repeller.move(params.repellerMove);
+  att1.setPower(params.att1Power);
+  att2.setPower(params.att2Power);
+  att3.setPower(params.att3Power);
+  att4.setPower(params.att4Power);
   
   for (let i=0; i < params.emitterAmount; i++) {
     emitter.addParticle(params.tColor);
@@ -67,6 +87,4 @@ function draw() {
   att2.show();
   att3.show();
   att4.show();
-
-
 }

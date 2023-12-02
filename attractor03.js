@@ -8,6 +8,10 @@ class Attractor3 {
   move(value) {
     this.position.y -= value;
   }
+
+  setPower(value) {
+    this.power = value;
+  }
   
   // setPower(value) {
   //   this.power = map(value, 0, width, -300, 300);
