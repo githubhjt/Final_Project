@@ -12,6 +12,7 @@ class Particle {
     this.velocity = createVector(random(0, 0.001),random(0, 0.001));
     this.acceleration = createVector(5, 5);
     this.lifespan = 255.0;
+    this.c = color(0);
   }
 
   run() {
@@ -33,10 +34,10 @@ class Particle {
 
   // Method to display
   show() {
-    stroke(0, this.lifespan);
+    noStroke();
     strokeWeight(2);
-    fill(127, this.lifespan);
-    circle(this.position.x, this.position.y, 0.01);
+    fill(this.c, this.lifespan);
+    circle(this.position.x, this.position.y, 1.5);
   }
 
   // Is the particle still useful?

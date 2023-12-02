@@ -12,7 +12,7 @@ let params = {
   emitterAmountMin : 0,
   emitterAmountMax : 10,
   emitterAmountStep : 1,
-  tColor : [200, 0, 0],
+  tColor : [0, 0, 200],
   tChoice : ['apple', 'banana', 'mango']
 }
 
@@ -48,7 +48,7 @@ function draw() {
   repeller.move(params.repellerMove);
   
   for (let i=0; i < params.emitterAmount; i++) {
-    emitter.addParticle();
+    emitter.addParticle(params.tColor);
   }
   
   // We’re applying a universal gravity.
