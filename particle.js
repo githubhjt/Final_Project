@@ -35,9 +35,8 @@ class Particle {
   // Method to display
   show() {
     noStroke();
-    strokeWeight(2);
     fill(this.c, this.lifespan);
-    circle(this.position.x, this.position.y, 1.5);
+    circle(this.position.x, this.position.y, 1);
   }
 
   // Is the particle still useful?

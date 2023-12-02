@@ -12,10 +12,6 @@ class Attractor1 {
   setPower(value) {
     this.power = value;
   }
-  
-  // setPower(value) {
-  //   this.power = map(value, 0, width, -300, 300);
-  // }
 
   show() {
     stroke(0);

@@ -28,7 +28,7 @@ let params = {
   emitterAmountMin : 0,
   emitterAmountMax : 10,
   emitterAmountStep : 1,
-  tColor : [0, 0, 200],
+  particleColor : [0, 0, 200],
   tChoice : ['apple', 'banana', 'mango']
 }
 
@@ -49,7 +49,7 @@ function setup() {
   att3 = new Attractor3(300, 200);
   att4 = new Attractor4(200, 300);
 
-  gui = createGui('test slider');
+  gui = createGui('Control Panel');
   // sliderRange(0, 100, 2);
   // gui.addGlobals('tValue');
   
@@ -68,7 +68,7 @@ function draw() {
   att4.setPower(params.att4Power);
   
   for (let i=0; i < params.emitterAmount; i++) {
-    emitter.addParticle(params.tColor);
+    emitter.addParticle(params.particleColor);
   }
   
   // We’re applying a universal gravity.
