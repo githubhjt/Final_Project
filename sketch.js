@@ -1,9 +1,27 @@
+// GUI
+let repSlider, emitSlider;
+
+let tValue = 10;
+let tValueMin = 0;
+let tValueMax = 100;
+let tValueStep = 2;
+let gui;
+
+let params = {
+  testValue : 10,
+  testValueMin : 0,
+  testValueMax : 500,
+  testValueStep : 2,
+  move : 1,
+  moveMin : 0,
+  moveMax : 10,
+  moveStep : 0.1,
+  tColor : [200, 0, 0],
+  tChoice : ['apple', 'banana', 'mango']
+}
+
 // One ParticleSystem
 let emitter;
-
-// GUI
-let repSlider;
-let emitSlider;
 
 //{!1} One repeller
 let repeller;
@@ -32,13 +50,20 @@ function setup() {
   att2 = new Attractor2(100, 200);
   att3 = new Attractor3(300, 200);
   att4 = new Attractor4(200, 300);
+
+  gui = createGui('test slider');
+  // sliderRange(0, 100, 2);
+  // gui.addGlobals('tValue');
+  
+  gui.addObject(params);
+  gui.setPosition(410, 80);
 }
 
 function draw() {
   background(230);
     
-  repeller.setPower(repSlider.value());
-  repeller.move(0.5);
+  repeller.setPower(params.testValue);
+  repeller.move(params.move);
   
   for (let i=0; i < emitSlider.value(); i++) {
     emitter.addParticle();
