@@ -12,9 +12,9 @@ class Emitter {
     this.particles.push(p);
   }
 
-  setParticlePS(particleSize) {
-    this.particles.s = particleSize;
-  }
+  // setParticlePS(particleSize) {
+  //   this.particles.s = particleSize;
+  // }
 
   applyForce(force) {
     //{!3} Applying a force as a p5.Vector
