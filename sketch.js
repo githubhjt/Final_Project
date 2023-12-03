@@ -28,6 +28,10 @@ let params = {
   emitterAmountMin : 0,
   emitterAmountMax : 10,
   emitterAmountStep : 1,
+  particleSize : 1,
+  particleSizeMin : 0,
+  particleSizeMax : 5,
+  particleSizeStep : 0.5,
   particleColor : [0, 0, 200],
   tChoice : ['apple', 'banana', 'mango']
 }
@@ -68,13 +72,16 @@ function draw() {
   att4.setPower(params.att4Power);
   
   for (let i=0; i < params.emitterAmount; i++) {
-    emitter.addParticle(params.particleColor);
+    emitter.addParticle(params.particleColor, sValue);
+    const sValue = 42;
   }
+
+  let particleSValue = emitter.getParticleS(0);
+  console.log(particleSValue);
   
   // We’re applying a universal gravity.
   let gravity = createVector(0, 0.1);
   emitter.applyForce(gravity);
-  //{!1} Applying the repeller
   emitter.applyRepeller(repeller);
   emitter.applyAttractor1(att1);
   emitter.applyAttractor2(att2);

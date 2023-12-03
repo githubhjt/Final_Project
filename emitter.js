@@ -6,11 +6,19 @@ class Emitter {
     this.particles = [];
   }
 
-  addParticle(aColor) {
-    let p = new Particle(this.origin.x, this.origin.y);
+  addParticle(aColor, sValue) {
+    let p = new Particle(aColor, sValue);
     p.c = color(aColor);
     this.particles.push(p);
   }
+
+  getParticleS(index) {
+    if (this.particles[index]) {
+        return this.particles[index].s; // Particle의 s 값을 반환합니다.
+    } else {
+        return null;
+    }
+}
 
   applyForce(force) {
     //{!3} Applying a force as a p5.Vector
