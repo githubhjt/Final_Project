@@ -46,7 +46,7 @@ let att1, att2, att3, att4;
 function setup() {
   createCanvas(400, 600);
 
-  emitter = new Emitter(width / 2, height / 2);
+  emitter = new Emitter(width / 2, height / 3);
   repeller = new Repeller(width / 2, 350);
   att1 = new Attractor1(200, 100);
   att2 = new Attractor2(100, 200);
