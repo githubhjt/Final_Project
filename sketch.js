@@ -68,10 +68,10 @@ function draw() {
   // emitter.setParticlePS(particleSizeValue);
   repeller.setPower(params.repellerPower);
   repeller.move(params.repellerMove);
-  att1.setPower(params.att1Power);
-  att2.setPower(params.att2Power);
-  att3.setPower(params.att3Power);
-  att4.setPower(params.att4Power);
+  att1.setPower(params.att1PowerSize);
+  att2.setPower(params.att2PowerSize);
+  att3.setPower(params.att3PowerSize);
+  att4.setPower(params.att4PowerSize);
   
   for (let i=0; i < params.emitterAmount; i++) {
     emitter.addParticle(params.particleColor);
