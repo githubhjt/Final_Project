@@ -70,6 +70,7 @@ function draw() {
   att2.setPower(params.att2Power);
   att3.setPower(params.att3Power);
   att4.setPower(params.att4Power);
+  emitter.setParticleX(params.particleSize);
   
   for (let i=0; i < params.emitterAmount; i++) {
     emitter.addParticle(params.particleColor);
