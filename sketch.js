@@ -30,7 +30,7 @@ let params = {
   emitterAmountStep : 1,
   particleSize : 1,
   particleSizeMin : 0,
-  particleSizeMax : 5,
+  particleSizeMax : 200,
   particleSizeStep : 0.5,
   particleColor : [0, 0, 200],
   tChoice : ['apple', 'banana', 'mango']
@@ -64,13 +64,13 @@ function setup() {
 function draw() {
   background(230);
     
+  emitter.setParticleX(params.particleSize);
   repeller.setPower(params.repellerPower);
   repeller.move(params.repellerMove);
   att1.setPower(params.att1Power);
   att2.setPower(params.att2Power);
   att3.setPower(params.att3Power);
   att4.setPower(params.att4Power);
-  emitter.setParticleX(params.particleSize);
   
   for (let i=0; i < params.emitterAmount; i++) {
     emitter.addParticle(params.particleColor);

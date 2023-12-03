@@ -12,8 +12,8 @@ class Emitter {
     this.particles.push(p);
   }
 
-  setParticleX(newX) {
-    this.particles.x = newX;
+  setParticleX(g) {
+    this.particles.x = g;
   }
 
   applyForce(force) {
