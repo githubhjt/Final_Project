@@ -72,12 +72,8 @@ function draw() {
   att4.setPower(params.att4Power);
   
   for (let i=0; i < params.emitterAmount; i++) {
-    emitter.addParticle(params.particleColor, sValue);
-    const sValue = 42;
+    emitter.addParticle(params.particleColor);
   }
-
-  let particleSValue = emitter.getParticleS(0);
-  console.log(particleSValue);
   
   // We’re applying a universal gravity.
   let gravity = createVector(0, 0.1);
