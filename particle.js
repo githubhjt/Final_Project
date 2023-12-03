@@ -39,7 +39,7 @@ class Particle {
   show() {
     noStroke();
     fill(this.c, this.lifespan);
-    circle(this.position.x, this.position.y, 1.2);
+    circle(this.position.x, this.position.y, 2);
   }
 
   // Is the particle still useful?

@@ -78,7 +78,8 @@ function draw() {
   }
   
   // We’re applying a universal gravity.
-  let gravity = createVector(0, 0.1);
+  // let gravity = createVector(0, 0.1);
+  let gravity = createVector(0, 0);
   emitter.applyForce(gravity);
   emitter.applyRepeller(repeller);
   emitter.applyAttractor1(att1);
