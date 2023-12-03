@@ -63,9 +63,9 @@ function setup() {
 
 function draw() {
   background(230);
-    
-  let particleSizeValue = params.particleSize;
-  emitter.setParticlePS(particleSizeValue);
+
+  // let particleSizeValue = params.particleSize;
+  // emitter.setParticlePS(particleSizeValue);
   repeller.setPower(params.repellerPower);
   repeller.move(params.repellerMove);
   att1.setPower(params.att1Power);
