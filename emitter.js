@@ -12,9 +12,9 @@ class Emitter {
     this.particles.push(p);
   }
 
-      setParticleX(newX) {
-      this.particles.x = newX;
-    }
+  setParticleX(newX) {
+    this.particles.x = newX;
+  }
 
   applyForce(force) {
     //{!3} Applying a force as a p5.Vector
