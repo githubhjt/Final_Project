@@ -7,13 +7,13 @@
 // A simple Particle class
 
 class Particle {
-  constructor(x, y) {
+  constructor(x, y, s) {
     this.position = createVector(x, y);
     this.velocity = createVector(random(0, 0.001),random(0, 0.001));
     this.acceleration = createVector(5, 5);
     this.lifespan = 255.0;
     this.c = color(0);
-    this.x = x;
+    this.ps = s;
   }
 
   run() {
@@ -37,7 +37,7 @@ class Particle {
   show() {
     noStroke();
     fill(this.c, this.lifespan);
-    circle(this.position.x, this.position.y, this.x);
+    circle(this.position.x, this.position.y, this.ps);
   }
 
   // Is the particle still useful?
