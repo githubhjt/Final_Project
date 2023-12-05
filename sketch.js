@@ -32,7 +32,7 @@ let params = {
   particleSizeMin : 0,
   particleSizeMax : 200,
   particleSizeStep : 0.5,
-  particleColor : [0, 0, 200],
+  particleColor : [50 , 50, 50],
   tChoice : ['apple', 'banana', 'mango']
 }
 
