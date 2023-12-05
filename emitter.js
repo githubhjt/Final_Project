@@ -13,7 +13,10 @@ class Emitter {
   }
 
   setParticlePS(particleSize) {
-    this.particles.s = particleSize;
+
+    for (let p of this.particles) {
+      p.ps = particleSize;
+    }
   }
 
   applyForce(force) {
