@@ -17,7 +17,7 @@ class Repeller {
     stroke(0);
     strokeWeight(2);
     fill(127);
-    circle(this.position.x, this.position.y, 32);
+    circle(this.position.x, this.position.y, 25);
   }
 
   repel(particle) {

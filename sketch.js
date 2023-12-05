@@ -58,14 +58,14 @@ function setup() {
   // gui.addGlobals('tValue');
   
   gui.addObject(params);
-  gui.setPosition(410, 10);
+  gui.setPosition(10, 10);
 }
 
 function draw() {
   background(230);
 
   // let particleSizeValue = params.particleSize;
-  // emitter.setParticlePS(particleSizeValue);
+  emitter.setParticlePS(params.particleSize);
   repeller.setPower(params.repellerPower);
   repeller.move(params.repellerMove);
   att1.setPower(params.att1PowerSize);
