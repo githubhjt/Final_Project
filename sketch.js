@@ -10,7 +10,7 @@ let params = {
   repellerMoveStep : 0.1,
   att1PowerSize : 0,
   att1PowerSizeMin : 0,
-  att1PowerSizeMax : 1000,
+  att1PowerSizeMax : 10000,
   att1PowerSizeStep : 2,
   att2PowerSize : 10000,
   att2PowerSizeMin : 0,
@@ -46,10 +46,10 @@ let att1, att2, att3, att4;
 function setup() {
   createCanvas(600, 600);
 
-  emitter = new Emitter(width / 2, height / 3);
+  emitter = new Emitter(250, 200);
   repeller = new Repeller(width / 2, 350);
   att1 = new Attractor1(300, 200);
-  att2 = new Attractor2(200, 300);
+  att2 = new Attractor2(250, 200);
   att3 = new Attractor3(400, 300);
   att4 = new Attractor4(300, 400);
 
