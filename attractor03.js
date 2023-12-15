@@ -17,7 +17,7 @@ class Attractor3 {
     stroke(0);
     strokeWeight(2);
     fill(80, 120, 150);
-    circle(this.position.x, this.position.y, this.power / 20);
+    circle(this.position.x, this.position.y, this.power / 50);
   }
 
   pull(particle) {

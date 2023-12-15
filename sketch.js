@@ -8,19 +8,19 @@ let params = {
   repellerMoveMin : 0,
   repellerMoveMax : 10,
   repellerMoveStep : 0.1,
-  att1PowerSize : 0,
+  att1PowerSize : 500,
   att1PowerSizeMin : 0,
-  att1PowerSizeMax : 10000,
+  att1PowerSizeMax : 1000,
   att1PowerSizeStep : 2,
-  att2PowerSize : 10000,
+  att2PowerSize : 500,
   att2PowerSizeMin : 0,
-  att2PowerSizeMax : 100000,
+  att2PowerSizeMax : 1000,
   att2PowerSizeStep : 2,
-  att3PowerSize : 0,
+  att3PowerSize : 500,
   att3PowerSizeMin : 0,
   att3PowerSizeMax : 1000,
   att3PowerSizeStep : 2,
-  att4PowerSize : 0,
+  att4PowerSize : 500,
   att4PowerSizeMin : 0,
   att4PowerSizeMax : 1000,
   att4PowerSizeStep : 2,
@@ -46,10 +46,10 @@ let att1, att2, att3, att4;
 function setup() {
   createCanvas(600, 600);
 
-  emitter = new Emitter(250, 200);
+  emitter = new Emitter(300, 300);
   repeller = new Repeller(width / 2, 350);
   att1 = new Attractor1(300, 200);
-  att2 = new Attractor2(250, 200);
+  att2 = new Attractor2(200, 300);
   att3 = new Attractor3(400, 300);
   att4 = new Attractor4(300, 400);
 
@@ -78,7 +78,7 @@ function draw() {
   }
   
   // We’re applying a universal gravity.
-  let gravity = createVector(0, 0.1);
+  let gravity = createVector(random(-0.2,0.2), random(-0.2, 0.2));
   // let gravity = createVector(0, 0);
   emitter.applyForce(gravity);
   emitter.applyRepeller(repeller);
