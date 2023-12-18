@@ -92,12 +92,12 @@ function draw() {
   beginShape();
   let head = springparticles[0];
   curveVertex(head.position.x, head.position.y);
-  // for (let p of springparticles) {
-  //   p.applyForce(gravity);
-  //   p.update();
-  //   curveVertex(p.position.x, p.position.y);
-  //   // p.show();
-  // }
+  for (let p of springparticles) {
+    // p.applyForce(gravity);
+    p.update();
+    curveVertex(p.position.x, p.position.y);
+    // p.show();
+  }
   let tail = springparticles[springparticles.length - 1];
   curveVertex(tail.position.x, tail.position.y);
   endShape();
@@ -106,10 +106,10 @@ function draw() {
 //   strokeWeight(0);
 //   ellipse(tail.position.x, tail.position.y, 64);
 
-  // if (mouseIsPressed) {
-  //   tail.position.set(mouseX, mouseY);
-  //   tail.velocity.set(0, 0);
-  // }
+  if (mouseIsPressed) {
+    tail.position.set(mouseX, mouseY);
+    tail.velocity.set(0, 0);
+  }
 
   // let particleSizeValue = params.particleSize;
   emitter.setParticlePS(params.particleSize);
