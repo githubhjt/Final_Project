@@ -65,7 +65,6 @@ function setup() {
 
   emitter = new Emitter(300, 300);
   repeller = new Repeller(width / 2, 350);
-  att1 = new Attractor1(300, 200);
   att2 = new Attractor2(200, 300);
   att3 = new Attractor3(400, 300);
   att4 = new Attractor4(300, 400);
@@ -110,6 +109,8 @@ function draw() {
     tail.position.set(mouseX, mouseY);
     tail.velocity.set(0, 0);
   }
+
+  att1 = new Attractor1(tail.position.x, tail.position.y);
 
   // let particleSizeValue = params.particleSize;
   emitter.setParticlePS(params.particleSize);
