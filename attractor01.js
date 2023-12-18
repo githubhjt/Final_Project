@@ -14,10 +14,10 @@ class Attractor1 {
   }
 
   show() {
-    stroke(0);
-    strokeWeight(2);
+    stroke(50);
+    strokeWeight(4);
     fill(80, 120, 150);
-    circle(this.position.x, this.position.y, this.power / 50);
+    circle(this.position.x, this.position.y, 30);
   }
 
   pull(particle) {
