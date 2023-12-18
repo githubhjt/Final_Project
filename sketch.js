@@ -4,10 +4,10 @@ let params = {
   repellerPowerMin : 0,
   repellerPowerMax : 1000,
   repellerPowerStep : 2,
-  repellerMove : 0.3,
-  repellerMoveMin : 0,
-  repellerMoveMax : 10,
-  repellerMoveStep : 0.1,
+  att1Move : 0.3,
+  att1MoveMin : 0,
+  att1MoveMax : 10,
+  att1MoveStep : 0.1,
   att1PowerSize : 1000,
   att1PowerSizeMin : 0,
   att1PowerSizeMax : 10000,
@@ -105,17 +105,17 @@ function draw() {
 //   strokeWeight(0);
 //   ellipse(tail.position.x, tail.position.y, 64);
 
-  if (mouseIsPressed) {
-    tail.position.set(mouseX, mouseY);
-    tail.velocity.set(0, 0);
-  }
+  // if (mouseIsPressed) {
+  //   tail.position.set(mouseX, mouseY);
+  //   tail.velocity.set(0, 0);
+  // }
 
   att1 = new Attractor1(tail.position.x, tail.position.y);
 
   // let particleSizeValue = params.particleSize;
   emitter.setParticlePS(params.particleSize);
   repeller.setPower(params.repellerPower);
-  repeller.move(params.repellerMove);
+  att1.move(params.att1Move);
   att1.setPower(params.att1PowerSize);
   att2.setPower(params.att2PowerSize);
   att3.setPower(params.att3PowerSize);
@@ -136,7 +136,7 @@ function draw() {
   emitter.applyAttractor4(att4);
   emitter.run();
 
-  repeller.show();
+  // repeller.show();
   att1.show();
   att2.show();
   att3.show();

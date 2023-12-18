@@ -6,7 +6,8 @@ class Repeller {
   }
   
   move(value) {
-    this.position.y -= value;
+    this.position.y -= random(-value, value);
+    this.position.x -= random(-value, value);
   }
   
   setPower(value) {
