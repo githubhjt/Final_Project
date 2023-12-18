@@ -43,8 +43,25 @@ let emitter;
 let repeller;
 let att1, att2, att3, att4;
 
+let springparticles = [];
+let springs = [];
+let spacing = 1;
+let k = 0.1;
+
 function setup() {
   createCanvas(600, 600);
+
+  for (let i = 0; i < 5; i++) {
+    springparticles[i] = new springParticle(width / 2, i * spacing);
+    if (i !== 0) {
+      let a = springparticles[i];
+      let b = springparticles[i - 1];
+      let spring = new Spring(k, spacing, a, b);
+      springs.push(spring);
+    }
+  }
+
+  springparticles[0].locked = true;
 
   emitter = new Emitter(300, 300);
   repeller = new Repeller(width / 2, 350);
@@ -63,6 +80,36 @@ function setup() {
 
 function draw() {
   background(230);
+
+  for (let s of springs) {
+    s.update();
+    //s.show();
+  }
+
+  noFill();
+  stroke(50);
+  strokeWeight(15);
+  beginShape();
+  let head = springparticles[0];
+  curveVertex(head.position.x, head.position.y);
+  for (let p of springparticles) {
+    p.applyForce(gravity);
+    p.update();
+    curveVertex(p.position.x, p.position.y);
+    //p.show();
+  }
+  let tail = springparticles[springparticles.length - 1];
+  curveVertex(tail.position.x, tail.position.y);
+  endShape();
+
+//   fill(120);
+//   strokeWeight(0);
+//   ellipse(tail.position.x, tail.position.y, 64);
+
+  // if (mouseIsPressed) {
+  //   tail.position.set(mouseX, mouseY);
+  //   tail.velocity.set(0, 0);
+  // }
 
   // let particleSizeValue = params.particleSize;
   emitter.setParticlePS(params.particleSize);
