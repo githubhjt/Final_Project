@@ -85,6 +85,8 @@ function draw() {
     //s.show();
   }
 
+  let gravity = createVector(random(-0.2,0.2), random(-0.2, 0.2));
+
   noFill();
   stroke(50);
   strokeWeight(15);
@@ -92,7 +94,7 @@ function draw() {
   let head = springparticles[0];
   curveVertex(head.position.x, head.position.y);
   for (let p of springparticles) {
-    // p.applyForce(gravity);
+    p.applyForce(gravity);
     p.update();
     curveVertex(p.position.x, p.position.y);
     // p.show();
@@ -105,17 +107,17 @@ function draw() {
 //   strokeWeight(0);
 //   ellipse(tail.position.x, tail.position.y, 64);
 
-  // if (mouseIsPressed) {
-  //   tail.position.set(mouseX, mouseY);
-  //   tail.velocity.set(0, 0);
-  // }
+  if (mouseIsPressed) {
+    tail.position.set(mouseX, mouseY);
+    tail.velocity.set(0, 0);
+  }
 
   att1 = new Attractor1(tail.position.x, tail.position.y);
 
   // let particleSizeValue = params.particleSize;
   emitter.setParticlePS(params.particleSize);
   repeller.setPower(params.repellerPower);
-  att1.move(params.att1Move);
+  // att1.move(params.att1Move);
   att1.setPower(params.att1PowerSize);
   att2.setPower(params.att2PowerSize);
   att3.setPower(params.att3PowerSize);
@@ -126,7 +128,6 @@ function draw() {
   }
   
   // We’re applying a universal gravity.
-  let gravity = createVector(random(-0.2,0.2), random(-0.2, 0.2));
   // let gravity = createVector(0, 0);
   emitter.applyForce(gravity);
   emitter.applyRepeller(repeller);
@@ -138,7 +139,7 @@ function draw() {
 
   // repeller.show();
   att1.show();
-  att2.show();
-  att3.show();
-  att4.show();
+  // att2.show();
+  // att3.show();
+  // att4.show();
 }
